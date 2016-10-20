@@ -50,16 +50,30 @@ test ('check horizontal win', function(t) {
 })
 
 test ('check verticle win', function(t) {
-  var expected = "X"
+  var expected = "0"
   var board =   [
-    ["X", "_", "_"],
-    ["X", "_", "_"],
-    ["X", "_", "_"]
+    ["0", "_", "_"],
+    ["0", "_", "_"],
+    ["0", "_", "_"]
   ];
 
    var actual = TTT.checkWin(board);
 
-   t.equal(actual, expected, "X wins!!- verticle")
+   t.equal(actual, expected, "0 wins!!- verticle")
    t.end()
 
+})
+
+test ('check diagonal win', function(t) {
+  var expected = "X"
+  var board = [
+    ["X", "_", "_"],
+    ["_", "X", "_"],
+    ["_", "_", "X"]
+  ];
+
+  var actual = TTT.checkWin(board);
+
+  t.equal(actual, expected, "X wins!!- diagonal")
+  t.end()
 })

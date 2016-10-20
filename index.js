@@ -24,12 +24,19 @@ function checkWin(board) {
   if (horizontalWin(board)) {
       return winner;
   }
+  if (verticleWin(board)){
+    return winner;
+  }
+  if (diagonalWin(board)){
+    return winner;
+  }
+
 }
 
 function horizontalWin(board) {
   var possibleWin ;
   for (var i = 0; i < board.length; i++) {
-      possibleWin= board[i][0]
+      possibleWin = board[i][0]
       if (board[i][1] !== possibleWin){
        continue;
       }
@@ -37,6 +44,24 @@ function horizontalWin(board) {
         winner = possibleWin;
         return true
       }
-
     }
+}
+
+function verticleWin(board) {
+  var possibleWin;
+  for (var i = 0; i < board.length; i++) {
+    possibleWin = board[0][i]
+    if (board[1][i] !== possibleWin){
+      continue;
+    }
+    if (board[2][i] == possibleWin) {
+      winner = possibleWin;
+      return true
+    }
+  }
+}
+
+function diagonalWin(board) {
+  var possibleWin;
+
 }
