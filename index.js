@@ -62,6 +62,20 @@ function verticleWin(board) {
 }
 
 function diagonalWin(board) {
-  var possibleWin;
+  var possibleWin = board[1][1]
+   possibleWin
+   if (board[0][0] == possibleWin){
+     if (board[2][2] == possibleWin){
+       winner = possibleWin;
+       return true
+     }
+  if (board[2][0] == possibleWin){
+    if (board[0][2] == possibleWin){
+      winner = possibleWin;
+      return true
+    }
+  }
+   }
+
 
 }
